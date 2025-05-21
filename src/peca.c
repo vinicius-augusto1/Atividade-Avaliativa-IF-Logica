@@ -33,17 +33,16 @@ float calcularArea(Peca *peca){
     }
 }
 
+
 float calcularPeso(Peca *peca){
-    switch(peca -> material){
+    float volume = calcularVolume(peca);
+    switch(peca->material){
         case ACO:
-            return 7.8f * calcularVolume(peca);
-            break;
+            return (7.8f * volume) / 1000.0f;
         case ALUMINIO:
-            return 2.6f * calcularVolume(peca);
-            break;
+            return (2.6f * volume) / 1000.0f;
         case BRONZE:
-            return 8.8f * calcularVolume(peca);
-            break;
+            return (8.8f * volume) / 1000.0f;
         default:
             return 0.0f;
     }
